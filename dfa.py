@@ -16,8 +16,7 @@ for i in range(nr_tranzitii):
         tranzitiile[tranzitie[0]] = [(tranzitie[2], tranzitie[1])]
     else:
         tranzitiile[tranzitie[0]].append((tranzitie[2], tranzitie[1]))
-    #print(tranzitie)
-# print(tranzitiile)
+
 nr_cuvinte = int(f.readline())
 cuvinte = [f.readline().strip() for i in range(nr_cuvinte)]
 # print(cuvinte)
@@ -29,17 +28,16 @@ for cuvant in cuvinte:
             print("NU")
     else:
         stare_curenta = stare_initiala
-        for litera in cuvant:     #parcurg litera cu litera
+        for litera in cuvant:     
             ok = 0
             if stare_curenta in tranzitiile:
                 for tranzitie in tranzitiile[stare_curenta]:
-                    if tranzitie[1] == litera: #am gasit litera
+                    if tranzitie[1] == litera: 
                         stare_curenta = tranzitie[0]
                         ok = 1
                         break
 
             if ok == 0:
-                # print("NU")
                 break
         if stare_curenta in stari_finale and ok == 1:
             print("DA")
