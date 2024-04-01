@@ -33,7 +33,7 @@ for cuvant in cuvinte:
     else:
         stari_curente = [stare_initiala]
         ok = 0
-        for litera in cuvant:     #parcurg litera cu litera
+        for litera in cuvant:     
             stari_urmatoare = []
             for stare in stari_curente:
                 if stare in tranzitiile and litera in tranzitiile[stare]:
